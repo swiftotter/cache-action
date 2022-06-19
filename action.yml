@@ -22,9 +22,9 @@ runs:
       if: ${{ inputs.composer == 'true' }}
       with:
         path: ${{ steps.composer-cache.outputs.dir }}
-        key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+        key: ${{ runner.os }}-composer-v2-${{ hashFiles('**/composer.lock') }}
         restore-keys: |
-          ${{ runner.os }}-composer-
+          ${{ runner.os }}-composer-v2-
     - name: Get yarn cache directory path
       id: yarn-cache-dir-path
       if: ${{ inputs.yarn == 'true' }}
